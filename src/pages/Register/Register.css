@@ -1,0 +1,49 @@
+.login {
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login > form > input {
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border-color: rgb(7, 106, 167);
+}
+
+.login__register > form > button {
+  line-height: 30px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(20, 9, 170);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.login > form > button:hover {
+  opacity: 88%;
+}
+
+.login__register {
+  color: rgb(200, 14, 29);
+  cursor: pointer;
+  margin-left: 10px;
+}
+.b_register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

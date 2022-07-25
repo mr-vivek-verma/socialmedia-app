@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "DM Sans"; */
+    background-color:#E5F0FF ;
+    
+  }
+  .nav_container{
+  margin: 0 auto;
+  position: relative;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1.5rem 6rem;
+  user-select: none;
+  }
+   img{
+  
+    height: 100px;
+  } 
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+    li {
+        margin-left: 6rem;
+        padding-right: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.83px;
+        letter-spacing: 0.1rem;
+        color: rgba(0, 21, 51, 0.6);
+        cursor: pointer;
+      }
+      .nav_list{
+        margin-right: 100px;
+      }
+      button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 25px;
+        margin-left: auto;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        width: 137px;
+        height: 43px;
+        color: rgba(59, 130, 246, 1);
+        background: #FFFFFF;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+      }
+      main_header, h1{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        margin: 40px 90px ;
+        width: 537px;
+        height: 222px;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 74px;
+        color: #193766;
+      }
+      .main_header p{
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        margin: 0px 90px ;
+        width: 537px;
+        height: 222px;
+        font-weight: 400;
+        font-size: 22px;
+        color: #697B98;
+      }
+      /* .main_header, button{
+        margin-top: 30px;
+        margin-right: 70rem;
+  
+        
+        
+      } */
