@@ -87,6 +87,7 @@ const PostEdit = () => {
   };
 
   return (
+    
     <div className="cpContainer" style={{ position: "fixed" }}>
       {!user ? (
         <h1>please login</h1>
