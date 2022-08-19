@@ -5,6 +5,7 @@ import { db, storage } from "../firebase";
 import { toast } from "react-toastify";
 // import { ref } from 'yup'
 import { deleteObject, ref } from "firebase/storage";
+import DeleteIcon from '@mui/icons-material/Delete';
 import "../App.css";
 
 const DeleteArticle = ({ id, imageUrl }) => {
@@ -21,7 +22,7 @@ const DeleteArticle = ({ id, imageUrl }) => {
       }
     }
   };
-  return <button onClick={handleDelete}>Delete</button>;
+  return <button onClick={handleDelete}><DeleteIcon/></button>;
 };
 
 export default DeleteArticle;

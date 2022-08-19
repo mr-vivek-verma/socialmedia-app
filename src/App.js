@@ -16,7 +16,7 @@ import Home from "./pages/Home";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const [isAuth, setIsAuth] = useState("false");
+  const [isAuth, setIsAuth] = useState(true);
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
@@ -47,7 +47,7 @@ function App() {
     <>
       {/* <Header /> */}
 
-      {/* <nav>
+      <nav className="app_nav">
       <Link to="/">Banner</Link>
         <Link to="/home">Home</Link>
         <Link to="/post">Post</Link>
@@ -57,7 +57,7 @@ function App() {
         ) : (
           <button onClick={signUserOut}>Logout</button>
         )}
-      </nav> */}
+      </nav>
           <Routes>
         <Route exact path="/" element={<Banner />} />
         <Route exact path="/home" element={<Home />} />

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import "./Banner.css";
 import { Link } from "react-router-dom";
-import { auth} from "../../firebase";
+import { auth,logout} from "../../firebase";
 import { signOut } from "firebase/auth";
 import logo from "../../assets/images/logo.png";
 import RectangleImage from "../../assets/images/Rectangle 3.png";
@@ -15,7 +15,6 @@ import image5 from "../../assets/images/image5.png";
 import Rectangle631 from "../../assets/images/Rectangle631.png";
 import Frame348 from "../../assets/images/Frame348.png";
 import download from "../../assets/images/download.png";
-import playcircle from "../../assets/images/play-circle.png";
 import Rectangle623 from "../../assets/images/Rectangle623.png";
 import Rectangle621 from "../../assets/images/Rectangle621.png";
 import Rectangle622 from "../../assets/images/Rectangle622.png";
@@ -25,47 +24,57 @@ import Vector from "../../assets/images/Vector.png";
 import Vector1 from "../../assets/images/Vector1.png";
 import tweetnow from "../../assets/images/tweetnow.png";
 const Banner = () => {
-  const [isAuth, setIsAuth] = useState("false");
-  const signUserOut = () => {
-    signOut(auth).then(() => {
-      localStorage.clear();
-      setIsAuth(false);
-      window.location.pathname = "/login";
-    });
-  };
+  // const [isAuth, setIsAuth] = useState(false);
+  // const signUserOut = () => {
+  //   signOut(auth).then(() => {
+  //     localStorage.clear();
+  //     setIsAuth(false);
+  //     window.location.pathname = "/login";
+  //   });
+  // };
   return (
     <>
-     
+     {/* <nav>
+      <Link to="/">Banner</Link>
+        <Link to="/home">Home</Link>
+        <Link to="/post">Post</Link>
+
+        {!isAuth ? (
+          <Link to="/login">Login</Link>
+        ) : (
+          <button onClick={signUserOut}>Logout</button>
+        )}
+      </nav>  */}
       <div className="main_container">
         <div className="first_container">
           <img src={RectangleImage} alt="logo" />
           <div className="second_container">
             <img src={bannerimg} alt="logo" />
-            <div className="nav_container">
-              {/* <img src={logo} alt="logo"/> */}
+            {/* <div className="nav_container">
+              <img src={logo} alt="logo"/>
               <ul className="nav_list">
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/post">Post</Link></li>
-                {/* <li>Features</li>
+                <li>Features</li>
                 <li>Preview</li>
-                <li>License</li> */}
+                <li>License</li>
               </ul>
-              {/* <button>
+              <button>
                 <a type="button" href="login">
                   {" "}
                   Login/Signup
                 </a>
-              </button> */}
-              {!isAuth ? (
+              </button>
+              {isAuth ? (
           <Link to="/login">Login</Link>
         ) : (
-          <button onClick={signUserOut}>Login/Signup</button>
+          <button onClick={signUserOut}>logout</button>
         )}
 
-              {/* <button>
+              <button>
               <Link to="/post">Post</Link>
-              </button> */}
-            </div>
+              </button>
+            </div> */}
             <div className="main_header">
               <h1>Beautiful Design For Social Media Content</h1>
               <p>
@@ -74,8 +83,8 @@ const Banner = () => {
               </p>
               <div className="btn">
                 {/* <img src={download} alt="download" /> */}
-                <button>Download Now</button>
-                <button className="action_button">See in Action</button>
+                <button><Link to="/login">Login Now</Link></button>
+                <button className="action_button"><Link to="/home">Posts</Link></button>
               </div>
             </div>
           </div>

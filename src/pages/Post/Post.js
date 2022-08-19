@@ -4,6 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db } from "../../firebase";
 import { toast } from "react-toastify";
 import { onAuthStateChanged, auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Post = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const Post = () => {
     image: "",
   });
   const [editData, setEditData] = useState("");
+  const navigate = useNavigate()
 
   useEffect(() => {
     const editValues = localStorage.getItem("EditData");
@@ -68,7 +70,9 @@ const Post = () => {
           })
             .then(() => {
               toast("Article added successfully", { type: "success" });
+              navigate("../Home")
               setProgress(0);
+              
             })
             .catch((err) => {
               toast("Error adding article", { type: "error" });
@@ -78,12 +82,12 @@ const Post = () => {
     );
   };
   return (
-    <div className="cpContainer" style={{ position: "fixed" }}>
+    <div className="cpContainer">
       {!user ? (
         <h1>please login</h1>
       ) : (
         <>
-          <h2>Create post</h2>
+          <h2>CREATE POST</h2>
           <label>Title</label>
           <input
             type="text"
@@ -125,7 +129,7 @@ const Post = () => {
           )}
           <div>
             <button
-              className="form-control btn-primary mt-2"
+              className="form-control"
               onClick={handlePublish}
             >
               Publish

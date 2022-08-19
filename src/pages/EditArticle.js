@@ -3,6 +3,7 @@ import { updateDoc, doc, getDoc } from "firebase/firestore";
 import { async } from "@firebase/util";
 import { auth, db } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import EditIcon from '@mui/icons-material/Edit';
 import "../App.css";
 
 const EditArticle = ({ id }) => {
@@ -28,7 +29,7 @@ const EditArticle = ({ id }) => {
   //   await updateDoc(userDoc);
   // };
 
-  return <button onClick={handleNavigate}>Edit</button>;
+  return <button onClick={handleNavigate}><EditIcon/></button>;
 };
 
 export default EditArticle;

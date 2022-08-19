@@ -4,6 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db } from "../firebase";
 import { toast } from "react-toastify";
 import { onAuthStateChanged, auth } from "../firebase";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const PostEdit = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +12,9 @@ const PostEdit = () => {
     description: "",
     image: "",
   });
-
+  const navigate = useNavigate()
   const [editData, setEditData] = useState("");
+  
 
   useEffect(() => {
     const editValues = localStorage.getItem("EditData");
@@ -27,7 +29,9 @@ const PostEdit = () => {
       setUser(currentUser);
     });
     return () => unsubscribe();
+    
   }, []);
+  
 
   const [progress, setProgress] = useState(0);
 
@@ -77,6 +81,7 @@ const PostEdit = () => {
             .then(() => {
               toast("Article added successfully", { type: "success" });
               setProgress(0);
+              navigate("../")
             })
             .catch((err) => {
               toast("Error adding article", { type: "error" });
@@ -85,7 +90,7 @@ const PostEdit = () => {
       }
     );
   };
-
+  
   return (
     
     <div className="cpContainer" style={{ position: "fixed" }}>

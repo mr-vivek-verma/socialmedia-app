@@ -42,7 +42,7 @@ const Login = () => {
           })
         );
         
-        navigate("../Post");
+        navigate("../Home");
       })
       //will display the error
       .catch((err) => {
@@ -58,7 +58,7 @@ const Login = () => {
             email: "",
             password: "",
           }}
-          onSubmit={(loginToApp) => {
+          onSubmit={(loginToApp) =>{
             // console.log(loginToApp);
           }}
         >
